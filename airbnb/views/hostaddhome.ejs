@@ -1,0 +1,14 @@
+<%- include('partials/header')%>
+<body>
+    <h1>Add your home here admin </h1>
+        <form action="/host/addHome" method="POST">
+        <input type="number" name="price" id="price">
+        <label for="price">enter home price</label>
+
+        <input type="text" name="homename" id="homename">
+        <label for="homename">enter homename</label>
+        <br/>
+        <button type="submit">submit </button>  
+    </form>
+</body>
+</html>

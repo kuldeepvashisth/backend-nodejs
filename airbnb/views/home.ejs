@@ -1,0 +1,21 @@
+<%- include('partials/header')%>
+<body>
+
+    <h1>welcome to airbnb  </h1>
+        <a href="/host/addHome">Add Home kd as admin</a>
+        <br/>
+           <a href="/user/addHome">Add Home as user</a>
+      
+    <ul>
+         <% registeredhouse.forEach((homes,index)=>{%>
+          <li>
+            <!-- or we can use span here -->
+            <h2><%=index+1%> :<%=homes.houseName%> ,price:<%=homes.price%>,location:<%=homes.location%>
+            ,pernight:<%=homes.pernight%>
+            </h2>
+            
+          </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
