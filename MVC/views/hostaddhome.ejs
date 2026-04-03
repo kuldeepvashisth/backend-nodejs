@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+    <h1>Add your home here admin </h1>
+        <form action="/host/addHome" method="POST">
+        <label for="price">enter home price</label>
+        <input type="number" name="price" id="price">
+
+        <label for="homename">enter homename</label>
+        <input type="text" name="houseName" id="homename">
+        <br/>
+
+        <label for="location">enter location</label>
+        <input type="text" name="location" id="location">
+        <br/>
+
+        <label for="pernight">enter pernight</label>
+        <input type="text" name="pernight" id="pernight">
+        <br/>
+        <button type="submit">submit </button>  
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+[
+  {
+    "houseName": "dddhjk",
+    "price": "333",
+    "location": "blb"
+  },
+  {
+    "houseName": "",
+    "price": "",
+    "location": ""
+  },
+  {
+    "houseName": "",
+    "price": "",
+    "location": ""
+  },
+  {
+    "houseName": "",
+    "price": "",
+    "location": "",
+    "pernight": ""
+  },
+  {
+    "houseName": "2n house",
+    "price": "78",
+    "location": "rhtk",
+    "pernight": "98"
+  },
+  {
+    "houseName": "2bhk",
+    "price": "999",
+    "location": "ymca",
+    "pernight": "456"
+  }
+]

@@ -1,0 +1,26 @@
+<%- include('partials/header')%>
+<body>
+
+    <h1>welcome to airbnb  </h1>
+        <a href="/host/addHome">Add Home kd as admin</a>
+        <br/>
+           <a href="/user/addHome">Add Home as user</a>
+
+    <% if (registeredhouse.length === 0) { %>
+        <p>No homes saved yet.</p>
+    <% } else { %>
+        <ul>
+            <% registeredhouse.forEach((homes,index)=>{%>
+                <li>
+                    <h2>
+                        <%= index + 1 %>. houseName: <%= homes.houseName %>,
+                        price: <%= homes.price %>,
+                        location: <%= homes.location %>,
+                        pernight: <%= homes.pernight || 'N/A' %>
+                    </h2>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</body>
+</html>
