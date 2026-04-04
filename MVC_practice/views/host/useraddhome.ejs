@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/nav') %>
+    <main class="page-shell page-shell--simple">
+        <h1>Add your home here user</h1>
+        <form action="/user/addHome" method="POST" class="form-card">
+        <label for="price">enter home price</label>
+            <input type="number" name="price" id="price">
+        
+        </br>
+              <!-- homename-->
+                <label for="homename">enter homename</label>
+              <input type="text" name="houseName" id="homename">
+   
+        <br/>
+
+    <label for="image">enter image</label>
+              <input type="text" name="image" id="image">
+        <br/>
+        <!-- location -->
+           <label for="location">enter location</label>
+              <input type="text" name="location" id="location">
+     
+
+        <br/>
+             <!-- price per night
+        <label for="pernight">enter pernight</label>
+             <input type="text" name="pernight" id="pernight">
+        
+        <br/> -->
+
+        <button type="submit">submit </button>  
+    </form>
+    </main>
+</body>
+</html>

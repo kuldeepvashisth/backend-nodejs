@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/nav') %>
+
+    <main class="page-shell page-shell--simple">
+        <h1>Favourite Homes</h1>
+
+        <% if (homes.length === 0) { %>
+            <section class="empty-state">
+                <h2>No favourite homes found</h2>
+                <p>Add some homes first.</p>
+            </section>
+        <% } else { %>
+            <section class="listing-grid">
+                <% homes.forEach((home, index) => { %>
+                    <article class="listing-card">
+                        <div class="listing-card__media">
+                            <img src="<%= home.image || '' %>" alt="<%= home.houseName || 'Home image' %>" class="listing-card__image">
+                        </div>
+
+                        <div class="listing-card__content">
+                            <p class="listing-card__label">Name</p>
+                            <h2><%= home.houseName || `Listing ${index + 1}` %></h2>
+
+                            <p class="listing-card__label">Location</p>
+                            <p class="listing-card__value"><%= home.location || 'Location coming soon' %></p>
+
+                            <p class="listing-card__label">Price</p>
+                            <p class="listing-card__value">Rs. <%= home.price || 'N/A' %></p>
+                        </div>
+                    </article>
+                <% }) %>
+            </section>
+        <% } %>
+    </main>
+</body>
+</html>
