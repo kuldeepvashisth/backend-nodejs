@@ -1,0 +1,65 @@
+But ek important baat: statics methods me normally arrow function use nahi karte, kyunki arrow function ka apna this nahi hota.
+
+Agar fetchAll ko arrow function se likhna hai, to aap aise kar sakte ho:
+
+homeSchema.statics.fetchAll = () => {
+  return mongoose.model('Home').find();
+};
+
+
+Bina $set ke — poora document replace ho sakta hai ⚠️
+$set ke saath — sirf wahi fields update hongi jo tumne likhi hain ✅
+await Home.findByIdAndUpdate(
+  id,
+  { $set: { houseName, price, location, image } }, // sirf ye fields touch karega
+);
+
+
+
+
+
+/*   ABOUT mongoose DELETE FUNCTION 
+
+const house = await Home.deleteOne({ _id: homeId });
+is misleading because house is not actually a house.
+
+deleteOne() returns a result object, something like:
+
+js
+
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+
+where deletedCount means how many documents were actually deleted from the database.
+{(
+    For deleteMany(), it can be bigger:
+    
+    const result = await Home.deleteMany({ location: "Delhi" });
+    console.log(result.deletedCount);
+    Maybe output:
+    
+    5
+    Meaning 5 homes from Delhi were deleted.
+)}
+
+
+Better name:
+
+js
+
+const result = await Home.deleteOne({ _id: homeId });
+Then you can check:
+
+js
+
+//used to check did home dlted successfully or not
+
+if (result.deletedCount === 0) {
+  console.log("No home found with this id");
+} else {
+  console.log("Home deleted successfully");
+}
+
+*/
