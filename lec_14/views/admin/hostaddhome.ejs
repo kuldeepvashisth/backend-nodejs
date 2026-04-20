@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/nav') %>
+    <main class="page-shell page-shell--simple">
+        <h1>register your home here admin</h1>
+        <form action="/host/addHome" method="POST" class="form-card">    
+        <label for="price">enter home price</label>
+        <input type="number" name="price" id="price">
+
+        <label for="homename">enter homename</label>
+        <input type="text" name="houseName" id="homename">
+        <br/>
+
+        <label for="image">enter image</label>
+        <input type="text" name="image" id="image">
+        <br/>
+
+        <label for="location">enter location</label>
+        <input type="text" name="location" id="location">
+        <br/>
+
+        <label for="pernight">enter pernight</label>
+        <input type="text" name="pernight" id="pernight">
+        <br/>
+        <button type="submit">edit </button>  
+    </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/nav') %>
+    <main class="page-shell page-shell--simple">
+        <h1>Home Detail</h1>
+    <div class="homeDetail">
+            <div class="detailsCard">
+         
+             <div class="imgDetail">
+                <img src="<%= details.image %>" alt="homeimg"/>
+             </div>
+             <h2><%= details.houseName%></h2>
+             <p>price:<%= details.price%></p>
+             <h4>location:<%= details.location%></h4>
+             <%- include('../partials/fav') %>
+            </div>
+   
+    </div>
+        
+    </main>
+</body>
+</html>

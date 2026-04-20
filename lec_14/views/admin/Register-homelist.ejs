@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+<body>
+    <%- include('../partials/nav') %>
+    <main class="page-shell page-shell--simple">
+        <h1>Registered Home List</h1>
+        <%if(registeredHouse.length==0){%>
+       <h3>NO Home Registered Yet</h3>
+  
+        <% } else { %>
+            <section class="listing-grid">
+                <% registeredHouse.forEach((homes, index) => { %>
+                    <article class="listing-card">
+                        <div class="listing-card__media">
+                            <img src="<%= homes.image || '' %>" alt="<%= homes.houseName || 'Home image' %>" class="listing-card__image">
+                        </div>
+
+                        <div class="listing-card__content">
+                            <p class="listing-card__label">Name</p>
+                            <h2><%= homes.houseName || `Listing ${index + 1}` %></h2>
+                            
+                            <p class="listing-card__label">Location</p>
+                            <p class="listing-card__value"><%= homes.location || 'Location coming soon' %></p>
+
+                            <p class="listing-card__label">Price</p>
+                            <p class="listing-card__value">Rs. <%= homes.price || 'N/A' %></p>
+                        <div class="btn_class">
+                            <a href="/home-list/<%= homes.id %>" class="listing-card__btn">Details</a>
+                          <a class="editBtn" href="/host/editDetails/<%= homes.id %>?editing=true">edit</a>
+                          <%- include('../partials/popHosthomeList', { home: homes }) %>
+                        </div>
+                        </div>
+                    </article>
+                <% }) %>
+            </section>
+      <%}%>
+
+    </main>
+</body>
+</html>
